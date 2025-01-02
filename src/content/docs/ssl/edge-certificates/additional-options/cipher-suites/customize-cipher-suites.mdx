@@ -70,6 +70,11 @@ Note that:
 
 4. Make an API call to either the [Edit zone setting](/api/resources/zones/subresources/settings/methods/edit/) endpoint or the [Edit TLS setting for hostname](/api/resources/hostnames/subresources/settings/subresources/tls/methods/update/) endpoint, specifying `ciphers` in the URL. List your array of chosen cipher suites in the `value` field.
 
+:::note
+
+Updating the cipher suites will result in certificates being renewed and redeployed.
+:::
+
 :::caution
 
 For guidance around custom hostnames, refer to [TLS settings - Cloudflare for SaaS](/cloudflare-for-platforms/cloudflare-for-saas/security/certificate-management/enforce-mtls/#cipher-suites). 
