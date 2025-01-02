@@ -22,11 +22,13 @@ The steps for getting diagnostic logs depend on your `cloudflared` deployment en
 
 These instructions apply to remotely-managed and locally-managed tunnels running directly on the host machine.
 
-1. (Linux only) Allow the `cloudflared` user to create RAW and PACKET sockets without root permissions:
+1. (Linux only) To include network diagnostics in the logs, allow the `cloudflared` user to create RAW and PACKET sockets without root permissions:
 
 		```sh
 		sudo setcap cap_net_raw+ep /usr/bin/traceroute && sudo setcap cap_net_raw+ep /usr/bin/traceroute
 		```
+
+		If you do not set `cap_net_raw`, then traceroute data will be unavailable.
 
 2. Get diagnostic logs:
 
